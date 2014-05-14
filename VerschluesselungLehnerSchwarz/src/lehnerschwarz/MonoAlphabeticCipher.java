@@ -62,12 +62,12 @@ public class MonoAlphabeticCipher implements Cipher{
 		String textKlein = text.toLowerCase();
 		String alphabet = "abcdefghijklmnopqrstuvwxyzäöüß";
 		for(int i=0;i<textKlein.length();i++){
-			char buchstabe = textKlein.charAt(i);
-			int stelle = alphabet.indexOf(buchstabe);
-			if(stelle==-1){
+			char buchstabe = textKlein.charAt(i); //Speichern des Buchstaben
+			int stelle = alphabet.indexOf(buchstabe); //Speichern der Stelle des Buchstaben
+			if(stelle==-1){ //Wenn es ein Sonderzeichen ist, wird es nicht verändert
 				b2 = textKlein.charAt(i);
 			} else{
-				b2 = this.secretAlphabet.charAt(stelle);
+				b2 = this.secretAlphabet.charAt(stelle); //Es wird geschaut welcher Buchstabe an der Stelle im Secret-Alphabet ist
 			}
 			textEncrypt+=b2;
 		}
@@ -90,10 +90,10 @@ public class MonoAlphabeticCipher implements Cipher{
 		for(int i=0;i<textKlein.length();i++){
 			char buchstabe = textKlein.charAt(i);
 			int stelle = this.secretAlphabet.indexOf(buchstabe);
-			if(stelle==-1){
+			if(stelle==-1){ //Gilt nur für Sonderzeichen
 				b2 = textKlein.charAt(i);
 			} else{
-				b2 = alphabet.charAt(stelle);
+				b2 = alphabet.charAt(stelle); //Decryptiert
 			}
 			textDecrypt+=b2;
 		}
