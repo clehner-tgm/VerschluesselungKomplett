@@ -11,6 +11,7 @@ public class ShiftCipher extends MonoAlphabeticCipher {
 	
 	//Konstruktor
 	public ShiftCipher(int value){
+		super();
 		setShiftAmount(value); //setzen wie weit das Alphabet verschoben wird	
 	}
 
