@@ -19,18 +19,20 @@ public class KeywordCipher extends MonoAlphabeticCipher{
 	public void setKeyword(String keyword){
 		String alphabet ="abcdefghijklmnopqrstuvwxyzäöüß"; //Alphabet speichern
 		String alphabetNeu="";
-		for(int i=0;i<keyword.length()-1;i++){ //Wird ausgeführt, solange wie das Keyword ist
+		keyword.toLowerCase();
+		for(int i=0;i<keyword.length();i++){ //Wird ausgeführt, solange wie das Keyword ist
 			char buchstabe=keyword.charAt(i); //Der Buchstabe an der i-ten Position wird gespeichert
 			if(alphabetNeu.indexOf(buchstabe)==-1){ //Wenn der Buchstabe nicht vorhanden ist
 				alphabetNeu += buchstabe; //wird er im Text hinzugefügt
 			}
 		}
-		for(int i=0;i<alphabet.length()-1;i++){ //Wird ausgeführt, solange wie das Alphabet ist
+		for(int i=0;i<alphabet.length();i++){ //Wird ausgeführt, solange wie das Alphabet ist
 			char buchstabe=alphabet.charAt(i); //Der Buchstabe an der i-ten Position wird gespeichert
 			if(alphabetNeu.indexOf(buchstabe)==-1){ //Wenn der Buchstabe nicht vorhanden ist
 				alphabetNeu += buchstabe; //wird er im Text hinzugefügt
 			}
 		}
+		System.out.println(alphabetNeu+"");
 		super.setSecretAlphabet(alphabetNeu); //Setzen des neuen Geheimalphabets
 	}
 }

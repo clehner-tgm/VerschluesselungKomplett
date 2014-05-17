@@ -24,7 +24,7 @@ public class ShiftCipher extends MonoAlphabeticCipher {
 	public void setShiftAmount(int shiftvalue){
 		String alphabet = "abcdefghijklmnopqrstuvwxyzäöüß"; //setzen des Alphabets
 		String alphabetNeu="";
-		for(int i=0;i<alphabet.length()-1;i++){ //wird solange ausgeführt, solange das Alphabet ist
+		for(int i=0;i<alphabet.length();i++){ //wird solange ausgeführt, solange das Alphabet ist
 			if(i+shiftvalue>=alphabet.length()){ //wenn die Verschiebung größer als die Länge ist
 				alphabetNeu += alphabet.charAt(i+shiftvalue-alphabet.length()); //Den Verschiebungsindex hinzuzählen und die Länge des Alphabets abziehen
 			}
